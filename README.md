@@ -5,3 +5,5 @@ Repository ini merupakan bahan pelatihan Laravel dasar. Mencangkup:
 2. Routing
 3. View
 4. Komunikasi dengan database.
+
+Lihat bagian Wiki untuk detail.
