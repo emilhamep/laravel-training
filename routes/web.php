@@ -22,3 +22,10 @@ Route::get('/tes', function () {
 Route::get('/tes_controller','CBuku@tes_controller');
 
 Route::get('/tes_parameter/{judul}/{pengarang}','CBuku@tes_parameter');
+
+Route::group(['prefix' => '/tes'],function(){
+  Route::get('/routing_group/{judul}','CBuku@group');
+  Route::get('/routing_group2',function(){
+    return 'Ini dari routing group dua';
+  });
+});

@@ -14,4 +14,8 @@ class CBuku extends Controller
     public function tes_parameter($judul,$pengarang){
       return $judul.' '.$pengarang;
     }
+
+    public function group($judul){
+      return $judul;
+    }
 }
