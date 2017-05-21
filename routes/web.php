@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/tes', function () {
+    return 'tes routing';
+});
+
+Route::get('/tes_controller','CBuku@tes_controller');
+
+Route::get('/tes_parameter/{judul}/{pengarang}','CBuku@tes_parameter');
