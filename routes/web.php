@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['pengarang' => 'Jaka']);
 });
 
 Route::get('/tes', function () {
@@ -28,4 +28,10 @@ Route::group(['prefix' => '/tes'],function(){
   Route::get('/routing_group2',function(){
     return 'Ini dari routing group dua';
   });
+});
+
+Route::group(['prefix' => '/buku'],function(){
+  Route::get('/','CBuku@index');
+  Route::get('/tambah','CBuku@tambah');
+  Route::get('/ubah/{id}','CBuku@ubah');
 });

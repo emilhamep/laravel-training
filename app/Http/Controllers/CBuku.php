@@ -18,4 +18,20 @@ class CBuku extends Controller
     public function group($judul){
       return $judul;
     }
+
+    public function index(){
+      return view('buku.index');
+    }
+
+    public function tambah(){
+      return view('buku.tambah');
+    }
+
+    public function ubah(){
+      return view('buku.ubah');
+    }
+
+    public function hapus(){
+    //  return view('buku.hapus');
+    }
 }
