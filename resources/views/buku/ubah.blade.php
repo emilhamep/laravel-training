@@ -28,6 +28,7 @@
 
 @section('navigation')
 <ul class="list-group">
+  <li class="list-group-item"><a href = "{{url('/buku/')}}">Home</a></li> 
  <li class="list-group-item"><a href = "{{url('/buku/tambah')}}">Tambah</a></li>
 
 </ul>
