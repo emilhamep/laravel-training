@@ -48,11 +48,36 @@ class CBuku extends Controller
       return redirect::to('/buku/');
     }
 
-    public function ubah(){
-      return view('buku.ubah');
+    public function ubah($id_buku){
+      //Ambil data buku di DB berdasarkan id
+      $mBuku = new Buku;
+      $buku = $mBuku::where('id','=',$id_buku)->get();
+
+
+      return view('buku.ubah')->with('buku',$buku);
     }
 
-    public function hapus(){
-    //  return view('buku.hapus');
+    public function ubah_proses(Request $request){
+      $mBuku = new Buku;
+      //$buku = $mBuku::where('id',$request['id'])->first();
+      $buku = $mBuku::find($request['id']);
+      $buku->judul = $request['judul'];
+      $buku->pengarang = $request['pengarang'];
+
+      $buku->save();
+
+      Session::flash('pesan', 'Buku berhasil diubah');
+
+      return redirect::to('/buku/');
+    }
+
+    public function hapus($id_buku){
+      $mBuku = new Buku;
+      $buku = $mBuku->find($id_buku);
+      $buku->delete();
+
+      Session::flash('pesan', 'Buku berhasil dihapus');
+
+      return redirect::to('/buku/');
     }
 }

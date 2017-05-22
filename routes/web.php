@@ -35,4 +35,6 @@ Route::group(['prefix' => '/buku'],function(){
   Route::get('/tambah','CBuku@tambah');
   Route::post('/tambah_proses','CBuku@tambah_proses');
   Route::get('/ubah/{id}','CBuku@ubah');
+  Route::post('/ubah_proses','CBuku@ubah_proses');
+  Route::get('/hapus/{id}','CBuku@hapus');
 });

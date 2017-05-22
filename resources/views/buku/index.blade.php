@@ -21,7 +21,9 @@
       echo "<tr>";
             echo "<td>".$buku->judul."</td>";
             echo "<td>".$buku->pengarang."</td>";
-            echo "<td><a href=''>Ubah</a>&nbsp;|&nbsp;<a href=''>Hapus</a></td>";
+      ?>
+            <td><a href="{{url('/buku/ubah/')}}/<?php echo $buku->id;?>">Ubah</a>&nbsp;|&nbsp;<a href="{{url('buku/hapus/')}}/<?php echo $buku->id;?>">Hapus</a></td>
+      <?php
       echo "</tr>";
       }
      ?>
